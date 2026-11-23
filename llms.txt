@@ -1,0 +1,6 @@
+# EchoMoral Fair Recruiting (by VeriTakt Collective)
+> Client-side AGG proxy scanner, EU AI Act HR guardrails & blind scorecard.
+
+- App: https://cheresonanz-design.github.io/echomoral-recruiting/
+- Offers: https://cheresonanz-design.github.io/echomoral-recruiting/pro/
+- Legal: https://cheresonanz-design.github.io/echomoral-recruiting/legal/

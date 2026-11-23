@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EchoMoral Fair Recruiting — AGG &amp; EU AI Act Screening-Hub</title>
+  <meta name="description" content="AGG-konformer Stellen-Scanner, Blind-Scorecard &amp; EU AI Act Anhang-III Guardrails (100 % lokal)." />
+  <link rel="canonical" href="https://cheresonanz-design.github.io/echomoral-recruiting/" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "EchoMoral Fair Recruiting AGG & AI Act Check", "applicationCategory": "BusinessApplication", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "url": "https://cheresonanz-design.github.io/echomoral-recruiting/"}</script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand-mark" href="index.html"><span>EchoMoral Recruiting</span><span class="brand-badge">AGG · AI ACT · BLIND</span></a>
+      <nav class="nav-links" aria-label="Hauptnavigation"><a href="index.html" class="active">AGG & AI Screening</a>
+<a href="agg-konformes-screening/" class="">AGG § 1/7</a>
+<a href="eu-ai-act-recruiting/" class="">EU AI Act HR</a>
+<a href="blind-scorecard/" class="">Blind Scorecard</a>
+<a href="pro/" class="">Kit & Rollout</a>
+<a href="legal/" class="">Impressum</a><a href="pro/" class="nav-cta">49 EUR Kit</a></nav>
+    </div>
+  </header>
+  
+  <section class="hero"><div class="container"><h1>AGG-konformer Stellen-Scanner &amp; Blind-Scorecard</h1><p>Prüfen Sie Stellenprofile &amp; Recruiting-Rubriken auf AGG-Risikobegriffe, EU AI Act Anhang III Pflichten und objektives Scoring — 100 % lokal ohne Bewerberdaten-Upload.</p></div></section>
+  <main class="container">
+    <div class="card">
+      <div class="btn-row" style="margin-top:0;margin-bottom:14px;">
+        <button type="button" class="btn" id="sampleBadBtn">Demo: Risiko-Anzeige (AGG &amp; AI-Act Lücken)</button>
+        <button type="button" class="btn" id="sampleGoodBtn">Demo: Blinde Engineering-Scorecard</button>
+        <button type="button" class="btn" id="sampleFinBtn">Demo: Finance Ops Lead (PASS)</button>
+      </div>
+      <div class="form-grid">
+        <div><label for="roleTitle">Stellentitel</label><input type="text" id="roleTitle" /></div>
+        <div><label for="candAlias">Kandidaten-Alias (Blind-ID)</label><input type="text" id="candAlias" /></div>
+        <div><label for="scoreSkills">Fach-Skills (40 %, 0–100)</label><input type="number" id="scoreSkills" min="0" max="100" /></div>
+        <div><label for="scoreExp">Praxis (20 %, 0–100)</label><input type="number" id="scoreExp" min="0" max="100" /></div>
+        <div><label for="scoreWork">Arbeitsprobe (25 %, 0–100)</label><input type="number" id="scoreWork" min="0" max="100" /></div>
+        <div><label for="scoreDom">Domain-Fit (15 %, 0–100)</label><input type="number" id="scoreDom" min="0" max="100" /></div>
+      </div>
+      <div class="form-grid" style="margin-top:12px;">
+        <div><label for="criteriaText">Stellenanzeige / Anforderungskriterien</label><textarea id="criteriaText"></textarea></div>
+        <div><label for="notesText">Interne Screening-Notiz</label><textarea id="notesText"></textarea></div>
+      </div>
+      <div class="checks-grid">
+        <label class="check-item"><input type="checkbox" id="chkBlind" /> Blinde Vorauswahl (Name/Foto/Alter ausgeblendet)</label>
+        <label class="check-item"><input type="checkbox" id="chkNotice" /> Bewerber-Transparenzhinweis nach Art. 26/50 aktiv</label>
+        <label class="check-item"><input type="checkbox" id="chkHitl" /> Menschliche Letztentscheidung (kein Auto-Reject)</label>
+        <label class="check-item"><input type="checkbox" id="chkLit" /> Recruiter AI-Literacy nach Art. 4 dokumentiert</label>
+        <label class="check-item"><input type="checkbox" id="chkDsgvo" /> 6-Monats-Löschkonzept (AGG § 15 / DSGVO)</label>
+      </div>
+      <div class="btn-row"><button type="button" class="btn btn-primary" id="runCheckBtn">Scorecard &amp; Compliance prüfen</button></div>
+    </div>
+
+    <div id="resultCard" class="card hidden">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;">
+        <h2 id="resultHeadline" style="margin:0;">Ergebnis</h2>
+        <div class="btn-row" style="margin:0;"><button type="button" class="btn" id="copyMdBtn">Markdown-Protokoll kopieren</button><button type="button" class="btn" id="dlJsonBtn">JSON-Audit laden</button></div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi-box"><div class="kpi-label">Objektiver Rubrik-Score</div><div class="kpi-val" id="scoreKpi">-</div></div>
+        <div class="kpi-box"><div class="kpi-label">Compliance-Readiness</div><div class="kpi-val" id="compKpi">-</div></div>
+        <div class="kpi-box"><div class="kpi-label">AGG-Risikobegriffe</div><div class="kpi-val" id="hitsKpi">-</div></div>
+        <div class="kpi-box"><div class="kpi-label">Kandidaten-Alias</div><div class="kpi-val" id="aliasKpi">-</div></div>
+      </div>
+      <div class="table-wrap"><table><thead><tr><th>ID</th><th>Rechtsrahmen</th><th>Status</th><th>Befund</th></tr></thead><tbody id="checksBody"></tbody></table></div>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="offer-card highlight"><div><span class="badge badge-pass">EM-REC-01 · 49 EUR</span><h3>Fair-Recruiting &amp; AGG Kit</h3><div class="offer-price">49 EUR</div><p class="muted">4-Tab Blind-Scorecard Excel, AGG/AI-Act Playbook PDF, 6-Monats-Löschtracker &amp; Offline-CLI.</p></div><div class="btn-row"><a href="mailto:che.resonanz@gmail.com?subject=Bestellung%20EchoMoral%20Fair-Recruiting%20Kit%20%2849%20EUR%29" class="btn btn-primary">49 EUR Kit bestellen</a><a href="pro/" class="btn">Details</a></div></div>
+      <div class="offer-card"><div><span class="badge badge-warn">EM-REC-ROLLOUT · 2.900 EUR</span><h3>Fair-Recruiting &amp; Scorecard Rollout</h3><div class="offer-price">2.900 EUR</div><p class="muted">Audit von 15 Stellenprofilen, blinde Bewertungsmatrix &amp; EU AI Act Anhang-III Doku.</p></div><div class="btn-row"><a href="mailto:che.resonanz@gmail.com?subject=Anfrage%20EchoMoral%20Fair-Recruiting%20Rollout%20%282.900%20EUR%29" class="btn btn-dark">2.900 EUR Rollout anfragen</a><a href="pro/" class="btn">Umfang</a></div></div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <p><strong>EchoMoral Fair Recruiting</strong> — AGG-konformer Stellen-Scanner, Blind-Scorecard &amp; EU AI Act Anhang-III Guardrails (100 % lokal).</p>
+      <p>Che Goncalves Menendez · EchoMoral · by VeriTakt Collective (Gewerbe: ImportKlar) · Liegnitzstr. 53A, 28237 Bremen, Deutschland · Umsatzsteuerbefreit gemäß § 19 UStG (Kleinunternehmerregelung)</p>
+      <p><a href="legal/">Impressum &amp; DSGVO</a> · <a href="pro/">49 EUR Kit &amp; 2.900 EUR Rollout</a> · <a href="https://cheresonanz-design.github.io/echomoral-compliance/" target="_blank" rel="noopener">EchoMoral Compliance-OS</a> · <a href="https://cheresonanz-design.github.io/opskanon-directory/" target="_blank" rel="noopener">OpsKanon</a></p>
+    </div>
+  </footer>
+  <script src="assets/recruiting_engine.js"></script><script src="assets/app.js"></script>
+</body>
+</html>
